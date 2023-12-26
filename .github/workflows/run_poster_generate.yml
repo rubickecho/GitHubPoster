@@ -126,7 +126,7 @@ jobs:
       - name: Run sync multiple script
         if: contains(env.TYPE, 'multiple')
         run: |
-          python3 -m github_poster multiple --types "github, data2" --github_user_name ${{ secrets.G_USER_NAME }} --dota2_id "${{ secrets.DOTA2_ID }}" --year 2020-$(date +"%Y") --me ${{ env.ME }}
+          python3 -m github_poster multiple --types "github, dota2" --github_user_name ${{ secrets.G_USER_NAME }} --dota2_id ${{ secrets.DOTA2_ID }} --year 2020-$(date +"%Y") --me ${{ env.ME }}
 
       - name: Mv svg files to examples
         # only for me to show
