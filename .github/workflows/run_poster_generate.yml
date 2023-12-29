@@ -115,7 +115,7 @@ jobs:
       - name: Run sync autosleep script
         if: contains(env.TYPE, 'autosleep')
         run: |
-          python3 -m github_poster json --json_file "data.json"
+          python3 -m github_poster json --json_file "IN_FOLDER/autosleep.json"
 
       - name: Run sync notion script
         if: contains(env.TYPE, 'notion')
