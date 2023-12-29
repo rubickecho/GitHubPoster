@@ -9,7 +9,7 @@ env:
   # please change to your own config.
   # this actions generate only this year
   # If you fork this please change the type to yours below
-  TYPE: "github, dota2, wakatime, multiple" # support strava/gpx/ns/cichang/shanbay/duolingo/issue/leetcode/github/gitlab/kindle/bilibili/wakatime/dota2/forest, Please change the 'pass' it to your own separated by commas
+  TYPE: "github, dota2, wakatime, bilibili, multiple" # support strava/gpx/ns/cichang/shanbay/duolingo/issue/leetcode/github/gitlab/kindle/bilibili/wakatime/dota2/forest, Please change the 'pass' it to your own separated by commas
   ME: rubickecho
 
 jobs:
@@ -126,7 +126,7 @@ jobs:
       - name: Run sync multiple script
         if: contains(env.TYPE, 'multiple')
         run: |
-          python3 -m github_poster multiple --types "github, dota2" --github_user_name ${{ secrets.G_USER_NAME }} --dota2_id "${{ secrets.DOTA2_ID }}" --year 2020-$(date +"%Y")
+          python3 -m github_poster multiple --types "github, dota2" --github_user_name ${{ secrets.G_USER_NAME }} --dota2_id "${{ secrets.DOTA2_ID }}"
 
       # - name: Mv svg files to examples
       #   # only for me to show
